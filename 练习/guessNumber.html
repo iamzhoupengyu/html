@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字</title>
+</head>
+<body>
+    <div>请输入数字:</div>
+    <input type="text">
+    <button class="button">提交</button>
+    <script>
+        let rom=parseInt(Math.random()*100);
+        console.log(rom);
+        let button=document.querySelector('button');
+        let input=document.querySelector('input');
+
+        button.onclick=function(){
+            if(input.value==''){
+                return;
+            }
+            let value=parseInt(input.value);
+            if(value===rom){
+                alert("猜对了！");
+
+            }else if(value>rom){
+                alert("猜大了！");
+            }else{
+                alert("猜小了");
+            }
+
+        }
+    </script>
+</body>
+</html>

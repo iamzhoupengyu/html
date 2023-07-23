@@ -1,0 +1,12 @@
+.content h3{
+    text-align: center;
+    padding: 10px;
+}
+.content .date{
+    text-align: center;
+    color: rgb(115,201,145);
+    padding: 10px;
+}
+.content .detail{
+    text-indent: 2em;
+}

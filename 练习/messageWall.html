@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表白墙</title>
+</head>
+<body>
+    <div class="root">
+    <h1>表白墙</h1>
+    <div class="row">
+        <span>你是谁：</span>
+        <input type="text" class input="input">
+    </div>
+    
+    <div class="row">
+        <span>对谁：</span>
+        <input type="text" class input="input">
+    </div>
+    
+    <div class="row">
+        <span>说：</span>
+        <input type="text" class input="input">
+    </div>
+    <div class="button-position">
+    <input class="button" type="button" value="提交" >
+    </div>
+    </div>
+    <style>
+        
+        .input {
+            width: 300px;
+            height: 20px;
+        }
+        .button-position{
+            text-align: center;
+            /* display: flex;
+            justify-content: center; */
+            margin: 10px;
+        }
+        .button {
+            
+            width: 100px;
+            background-color: #090;
+            color: #fff;
+            
+            
+        }
+        h1 {
+            text-align: center;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            border: 10px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        span {
+            width: 70px;
+            text-align: right;
+        }
+        .button:active{
+            background-color: blue;
+        }
+        .root {
+            border: solid #8e6868 20px;
+        }
+
+    </style>
+    <script>
+        let button = document.querySelector('.button');
+        let rows=document.querySelectorAll('.row input');
+        let root=document.querySelector('.root');
+        button.onclick=function(){
+            if(rows[0].value == '' || rows[1].value == '' || rows[2].value == '')
+                return;
+            let value=rows[0].value+" 对 "+rows[1].value+" 说 "+rows[2].value;
+            let newDiv=document.createElement('div');
+            newDiv.innerHTML=value;
+            newDiv.className="button-position";
+            root.appendChild(newDiv);
+        }
+    </script>
+</body>
+</html>
